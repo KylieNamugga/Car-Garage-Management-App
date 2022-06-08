@@ -1,0 +1,19 @@
+{
+  "name": "car-garage-management-app",
+  "version": "1.0.0",
+  "description": "car garage management app",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/KylieNamugga/Car-Garage-Management-App.git"
+  },
+  "author": "Namugga Kylie Rutwama",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/KylieNamugga/Car-Garage-Management-App/issues"
+  },
+  "homepage": "https://github.com/KylieNamugga/Car-Garage-Management-App#readme"
+}
