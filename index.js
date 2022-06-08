@@ -1,3 +1,4 @@
+require('dotenv').config();
 const express = require('express');
 const path = require('path');
 const mongoose = require('mongoose');
@@ -14,7 +15,7 @@ const expressSession = require('express-session')({
 
 
 // Import database configurations
-const config = require('./config/database');
+// const config = require('./config/database');
 
 // Importing Routes
 const homeRoutes = require('./routes/homeRoutes');
@@ -22,24 +23,21 @@ const loginRoutes = require('./routes/loginRoutes');
 const registrationRoutes = require('./routes/registrationRoutes');
 const signupRoutes = require('./routes/signupRoutes');
 const dashboardRoutes = require('./routes/dashboardRoutes');
-// post route variable for my sign up form is similar to the get route variable 
-// because they are in the same file
-
 
 // Instantiating the app/server
 const app = express();
 
 // creating a connection between the controller and database
-mongoose.connect(config.database)
-const db = mongoose.connection
-// checking if we've connected
-db.once('open',()=>{
-    console.log('connected to mongodb');
-});
+// mongoose.connect(config.database)
+// const db = mongoose.connection
+// // checking if we've connected
+// db.once('open',()=>{
+//     console.log('connected to mongodb');
+// });
 
-db.on('error', (err)=>{
-console.error(err);
-});+
+// db.on('error', (err)=>{
+// console.error(err);
+// });+
 
 // Setting up the view engine. Pug is our view engine
 app.engine('pug', require('pug').__express);
@@ -98,7 +96,14 @@ app.get('*', (req, res) => {
 
 // server listening port
 
-app.listen(3000,()=>{
-    console.log('server started on port 3000')
+// app.listen(3000,()=>{
+//     console.log('server started on port 3000')
+// });
+
+// Setting connection port
+const port = process.env.PORT || 4000
+app.listen(port,()=>{
+    console.log(`server started on port ${port}`)
 });
+
 

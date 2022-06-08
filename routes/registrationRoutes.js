@@ -19,44 +19,30 @@ router.post('/registration', (req, res) => {
     //Kylie, declare variables that match your form input names
     const fullname = req.body.fullname;
     const phonenumber = req.body.phonenumber;
-    const nin = req.body.nin;
     const numberplate = req.body.numberplate;
+    const date = req.body.date;
     const vehicletype = req.body.vehicletype;
     const service = req.body.service;
     const servicefee = req.body.servicefee;
-    const vehiclemodel = req.body.vehiclemodel;
-    const colour = req.body.colour;
-    const date = req.body.date;
-    const arrivaltime = req.body.arrivaltime;
-    const gender = req.body.gender;
     const batteryprice = req.body.batteryprice;
-    const batterysize = req.body.batterysize;
     const tyreprice = req.body.tyreprice;
-    const tyresize = req.body.tyresize;
 
     const errors = req.validationErrors()
     if (errors) {
         res.render('registration')
     }
-// matching my inputs to my schema
+    // matching my inputs to my schema
     else {
         let newRegistration = new Registration({
             fullname: fullname,
             phonenumber: phonenumber,
-            nin: nin,
             numberplate: numberplate,
+            date: date,
             vehicletype: vehicletype,
             service: service,
             servicefee: servicefee,
-            vehiclemodel: vehiclemodel,
-            colour: colour,
-            date: date,
-            arrivaltime: arrivaltime,
-            gender: gender,
             batteryprice: batteryprice,
-            batterysize: batterysize,
             tyreprice: tyreprice,
-            tyresize: tyresize
 
         });
         // Saving registration data

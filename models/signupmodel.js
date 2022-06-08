@@ -1,7 +1,7 @@
 // Require mongoose
 const mongoose = require('mongoose')
 
-// This helps us capture our user name.
+// This captures our user name.
 const passportLocalmongoose = require('passport-local-mongoose')
 
 // Create schema
