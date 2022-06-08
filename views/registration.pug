@@ -1,0 +1,69 @@
+doctype html
+head
+  meta(charset='UTF-8')
+  meta(http-equiv='X-UA-Compatible' content='IE=edge')
+  meta(name='viewport' content='width=device-width, initial-scale=1.0')
+  link(rel='stylesheet' href='/bootstrap-5.0.2-dist/css/bootstrap.css')
+  link(rel='stylesheet' href='/css/registration.css')
+  title Client Registration Form
+.ka-container
+  .title
+    span Registration 
+  form#form.row.g-3(name='clientRegistration' method='POST' action='/registration' onsubmit='return regValidation();')
+    .col-md-6
+      label.form-label(for='inputname') Full Name
+      input#fullname.form-control(type='text' name='fullname')
+      small#fullnameError
+    .col-md-6
+      label.form-label(for='inputnumberPlate') NumberPlate
+      input#numberplate.form-control(type='text' name='numberplate')
+      small#numberplateError
+    .col-md-6
+      label.form-label(for='inputDate') Date
+      input#date.form-control(type='date' name='date')
+      small#dateError
+    .col-md-6
+      label.form-label(for='inputFor') Vehicle Type
+      select#vehicletype.form-select(type='text' name='vehicletype')
+        option(value='Default' selected='') Choose Vehicle type
+        option(value='Personal car') Personal car
+        option(value='Taxi') Taxi
+        option(value='Boda Boda') Boda Boda
+        option(value='Truck') Truck
+      small#vehicletypeError
+    .col-md-6
+      label.form-label(for='inputService') Service
+      select#service.form-select(type='text' name='service')
+        option(value='Default' selected='') Choose Client Service
+        option(value='Parking') Parking
+        option(value='Battery Hire') Battery Hire
+        option(value='Tyre Pressure') Tyre Pressure
+      small#serviceError
+    .col-md-6
+      label.form-label(for='inputPrice') Parking Fee
+      select#servicefee.form-select(type='number' name='servicefee')
+        option(value='Default' selected='') Select &apos;0&apos; if not required
+        option(value='10000') 10,000Ugx
+        option(value='5000') 5,000Ugx
+        option(value='0') 0,00Ugx
+        small#servicefeeError
+    .col-md-6
+      label.form-label(for='inputTime') Battery Price
+      select#batteryprice.form-select(type='number' name='batteryprice')
+        option(value='Default' selected='') Select &apos;0&apos; if not required
+        option(value='10000') 50,000Ugx
+        option(value='5000') 30,000Ugx
+        option(value='0') 0,00Ugx
+      small#batterypriceError
+    .col-md-6
+      label.form-label(for='inputTime') Tyre Pressure Price
+      select#tyreprice.form-select(type='number' name='tyreprice')
+        option(value='Default' selected='') Select &apos;0&apos; if not required
+        option(value='5000') 2,000Ugx
+        option(value='500') 500Ugx
+        option(value='0') 0,00Ugx
+      small#tyrepriceError
+    .col-12
+      button.btn.btn-primary(type='submit' value='Submit' name='') Register Client 
+script(src="/bootstrap-5.0.2-dist/js/bootstrap.bundle.js") 
+script(src='/javascript/val.js')
