@@ -18,7 +18,6 @@ router.get('/registration', (req, res) => {
 router.post('/registration', (req, res) => {
     //Kylie, declare variables that match your form input names
     const fullname = req.body.fullname;
-    const phonenumber = req.body.phonenumber;
     const numberplate = req.body.numberplate;
     const date = req.body.date;
     const vehicletype = req.body.vehicletype;
@@ -35,7 +34,6 @@ router.post('/registration', (req, res) => {
     else {
         let newRegistration = new Registration({
             fullname: fullname,
-            phonenumber: phonenumber,
             numberplate: numberplate,
             date: date,
             vehicletype: vehicletype,
