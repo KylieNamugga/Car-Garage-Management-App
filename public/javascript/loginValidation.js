@@ -21,24 +21,27 @@ const validateLogIn = () => {
             emailError.style = 'color:red; font-family:Arial, Helvetica, Sans-serif;';
             return false
         }else{
-            emailError.textContent = ""
+            emailError.textContent = "";
+            email.style.border = '2px solid green';
         }
     }
 
     if (password.value == '') {
         password.style.border = '2px solid red';
-        passwordError.innerHTML = "password field should not be left empty";
+        passwordError.innerHTML = "field should not be left empty";
         passwordError.style = 'color:red; font-family:Arial, Helvetica, Sans-serif;';
         return false
     } else {
-        const passwordRegex = /^(?=.*[A-Z])(?=.*[a-z])(?=.*[0-9]).*$/
+        const passwordRegex = /^(?=.*[A-Z])(?=.*[a-z]).*$/
         if (passwordRegex.test(password.value) === false) {
             password.style.border = '2px solid red';
-            passwordError.innerHTML = 'Password of min 8 characters,1 uppercase,1 lowercase and 1 number'
+            passwordError.innerHTML = "password of Minimum eight characters,atleast 1 uppercase,1 lowercase";
             passwordError.style = 'color:red; font-family:Arial, Helvetica, Sans-serif;';
             return false
         }else{
-            passwordError.textContent = ""
+            passwordError.textContent = "";
+            password.style.border = '2px solid green';
         }
     }
 }
+

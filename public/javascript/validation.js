@@ -34,6 +34,9 @@ const validateSignUp = () => {
                 fNameError.innerHTML = "first name should be 3-10 characters";
                 fNameError.style = 'color:red; font-family:Arial, Helvetica, Sans-serif;';
                 return false
+            } else {
+                fNameError.textContent = "";
+                firstname.style.border = '1px solid green';
             }
         }
 
@@ -62,6 +65,9 @@ const validateSignUp = () => {
                 lNameError.innerHTML = "first name should be 5-10 characters";
                 lNameError.style = 'color:red; font-family:Arial, Helvetica, Sans-serif;';
                 return false
+            } else {
+                lNameError.textContent = "";
+                lastname.style.border = '1px solid green';
             }
         }
 
@@ -82,19 +88,46 @@ const validateSignUp = () => {
             emailError.innerHTML = "Please provide a valid email";
             emailError.style = 'color:red; font-family:Arial, Helvetica, Sans-serif;';
             return false
-        };
+        }
+        if (emailRegex.test(email.value) === true) {
+            email.style.border = '1px solid green';
+            emailError.innerHTML = "";
+            emailError.style = 'color:green; font-family:Arial, Helvetica, Sans-serif;';
+            return true
+        }
     }
 
     // validating password
-    // Minimum eight characters, at least one uppercase letter, one lowercase letter and one number:
+    // if (password.value == '') {
+    //     password.style.border = '1px solid red';
+    //     passwordError.innerHTML = "field should not be left empty";
+    //     paswordError.style = 'color:red; font-family:Arial, Helvetica, Sans-serif;';
+    //     return false
+    // } else {
 
-    const passwordRegex = /^(?=.*[A-Z])(?=.*[a-z])(?=.*[0-9]).*$/
+    //     const passwordRegex = /^(?=.*[A-Z])(?=.*[a-z]).*$/
+    //     if (passwordRegex.test(password.value) === false) {
+    //         password.style.border = '1px solid red';
+    //         passwordError.innerHTML = "password of Minimum eight characters,atleast 1 uppercase,1 lowercase";
+    //         passwordError.style = 'color:red; font-family:Arial, Helvetica, Sans-serif;';
+    //         return false
+    //     }
+    //     if (passwordRegex.test(password.value) === true) {
+    //         password.style.border = '1px solid green';
+    //         passwordError.innerHTML = "";
+    //         passwordError.style = 'color:green; font-family:Arial, Helvetica, Sans-serif;';
+    //         return true
+    //     }
+    // }
+
     if (password.value != '' && password.value.match(passwordRegex)) {
-
+        password.style.border = '1px solid green';
+        passwordError.innerHTML = "";
+        return true
     }
     else {
         password.style.border = '1px solid red';
-        passwordError.innerHTML = 'Please provide password of Minimum eight characters,atleast 1 uppercase,1 lowercase and 1 number:'
+        passwordError.innerHTML = 'Please provide password of Minimum eight characters,atleast 1 uppercase,1 lowercase:'
         passwordError.style = 'color:red; font-family:Arial, Helvetica, Sans-serif;'
         return false
     }
