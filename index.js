@@ -61,29 +61,29 @@ app.get('*', (req, res) => {
   res.status(404).send('This is an invalid URL')
 })
 
-mongoose.connect(DATABASE_URL).then(() => {
-  // successful connection
-  app.listen(PORT, ()=> {
-      let message = `${WELCOME_MESSAGE} ${PORT}`
-      console.log(message)
-  })
-}).catch(error => {
-  console.error("Failed to start the server due to : ",error)
-})
-// mongoose.connect(process.env.MONGODB_URI ||'mongodb://localhost:27017/loan-management',
-// {
-//   useNewUrlParser:true,
-//   useUnifiedTopology:true,
-// },
-// ).then(() => {
-//     // successful connection
-//     app.listen(PORT, ()=> {
-//         let message = `${WELCOME_MESSAGE} http://localhost:${PORT}`
-//         console.log(message)
-//     })
+// mongoose.connect(DATABASE_URL).then(() => {
+//   // successful connection
+//   app.listen(PORT, ()=> {
+//       let message = `${WELCOME_MESSAGE} ${PORT}`
+//       console.log(message)
+//   })
 // }).catch(error => {
-//     console.error("Failed to start the server due to : ",error)
+//   console.error("Failed to start the server due to : ",error)
 // })
+mongoose.connect(process.env.MONGODB_URI ||'mongodb://localhost:27017/loan-management',
+{
+  useNewUrlParser:true,
+  useUnifiedTopology:true,
+},
+).then(() => {
+    // successful connection
+    app.listen(PORT, ()=> {
+        let message = `${WELCOME_MESSAGE} http://localhost:${PORT}`
+        console.log(message)
+    })
+}).catch(error => {
+    console.error("Failed to start the server due to : ",error)
+})
 
 
 module.exports = app;
