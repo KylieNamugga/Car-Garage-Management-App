@@ -6,7 +6,7 @@ head
   link(rel='stylesheet' href='/css/signup.css')
 .wrapper
   h2 New Manager Sign Up Form
-  form(name='registration' method='POST' action='/signup' onsubmit='return validation()')
+  form(name='registration' method='POST' action='/signup' onsubmit='return validation();')
     label.form-label(for='inputTime') First Name
     .input-box
       input#firstname(type='text' name='firstname')
