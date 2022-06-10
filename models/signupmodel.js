@@ -22,7 +22,7 @@ const signupSchema = mongoose.Schema({
         unique: true
     },
 
-    password: {
+    confirmPassword: {
         type: String,
         required: true
     },

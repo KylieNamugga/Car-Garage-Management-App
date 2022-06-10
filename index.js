@@ -67,10 +67,11 @@ app.listen(PORT, () => {
 });
 
 
-// mongoose.connect(process.env.MONGODB_URI ||'mongodb://localhost:27017/loan-management',
+// mongoose.connect(process.env.MONGODB_URI ||'mongodb://0.0.0.0:27017/kylie-autoshop',
 // {
 //   useNewUrlParser:true,
 //   useUnifiedTopology:true,
+
 // },
 // ).then(() => {
 //     // successful connection

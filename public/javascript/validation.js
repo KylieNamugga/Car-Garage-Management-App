@@ -3,7 +3,7 @@ const validateSignUp = () => {
     var firstname = document.getElementById('firstname');
     var lastname = document.getElementById('lastname');
     var email = document.getElementById('email');
-    var password = document.getElementById('password');
+    var password = document.getElementById('confirmPassword');
 
     // validation errors in small tag
     const fNameError = document.getElementById("fNameError");
