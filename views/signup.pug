@@ -6,7 +6,7 @@ head
   link(rel='stylesheet' href='/css/signup.css')
 .wrapper
   h2 New Manager Sign Up Form
-  form(name='registration' method='POST' action='/signup' onsubmit='return validateSignUp();')
+  form(name='registration' method='POST' action='/signup' onsubmit='return validation();')
     label.form-label(for='inputTime') First Name
     .input-box
       input#firstname(type='text' name='firstname')
@@ -24,7 +24,7 @@ head
       small#emailError
     label.form-label(for='inputTime') Password 
     .input-box
-      input#password(type='password' name='confirmPassword')
+      input#password(type='password' name='password')
     div
       small#passwordError
     .input-box.button
@@ -33,4 +33,4 @@ head
       h3
         | Already have an account? 
         a(href='/login') Login now
-script(src='/javascript/validation.js')
+script(src='/javascript/signup.js')
