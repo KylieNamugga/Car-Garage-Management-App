@@ -1,7 +1,7 @@
 const validation = () => {
-    var firstname = document.getElementById("firstname")
-    var lastname = document.getElementById("lastname")
-    var email = document.getElementById("email")
+    var firstname = document.getElementById("firstname");
+    var lastname = document.getElementById("lastname");
+    var email = document.getElementById("email");
     var password = document.getElementById("password");
 
     // validation errors in small tag
@@ -13,6 +13,7 @@ const validation = () => {
     // firstname validation
     if (firstname.value == "") {
         fNameError.innerHTML = "First name is required";
+        fNameError.innerHTML.style.color = "red";
         firstname.style.border = "1px solid red";
         firstname.focus();
         return false;
@@ -20,18 +21,20 @@ const validation = () => {
         const lNamelengthRegex = /^[A-Z][a-z]$/;
         if (lNamelengthRegex.test(firstname.value) === false) {
             fNameError.innerHTML = "First name should start with a capital letter";
+            fNameError.innerHTML.style.color = "red";
             firstname.style.border = "1px solid red";
             firstname.focus();
             return false;
         } else {
             fNameError.innerHTML = "";
-            firstname.style.border = "";
+            firstname.style.border = "1px solid green";
         }
     }
 
     // lastname validation
     if (lastname.value == "") {
         lNameError.innerHTML = "Last name is required";
+        lNameError.innerHTML.style = "color:red";
         lastname.style.border = "1px solid red";
         lastname.focus();
         return false;
@@ -39,6 +42,7 @@ const validation = () => {
         const lnameRegex = /^[A-Z][a-z]$/;
         if (lnameRegex.test(lastname.value) === false) {
             lNameError.innerHTML = "Last name should start with a capital letter";
+            lNameError.style.color = "red";
             lastname.style.border = "1px solid red";
             lastname.focus();
             return false;
@@ -51,6 +55,8 @@ const validation = () => {
     // email validation
     if (email.value == "") {
         emailError.innerHTML = "Email is required";
+        emailError.style.color = "red";
+        emailError.style.border = "1px solid red";
         email.style.border = "1px solid red";
         email.focus();
         return false;
@@ -58,6 +64,7 @@ const validation = () => {
         const emailRegex = /^([a-zA-Z0-9_\-\.]+)@([a-zA-Z0-9_\-\.]+)\.([a-zA-Z]{2,5})$/;
         if (emailRegex.test(email.value) === false) {
             emailError.innerHTML = "Invalid email address";
+            emailError.style.color = "red";
             email.style.border = "1px solid red";
             email.focus();
             return false;
@@ -70,6 +77,7 @@ const validation = () => {
     // password validation
     if (password.value == "") {
         passwordError.innerHTML = "Password is required";
+        passwordError.style.color = "red";
         password.style.border = "1px solid red";
         password.focus();
         return false;
