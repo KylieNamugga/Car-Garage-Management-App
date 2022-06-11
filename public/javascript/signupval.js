@@ -1,8 +1,8 @@
 const validation = () => {
-    var firstname = document.getElementById("firstname");
-    var lastname = document.getElementById("lastname");
-    var email = document.getElementById("email");
-    var password = document.getElementById("password");
+    const firstname = document.getElementById("firstname");
+    const lastname = document.getElementById("lastname");
+    const email = document.getElementById("email");
+    const password = document.getElementById("password");
 
     // validation errors in small tag
     const fNameError = document.getElementById("fNameError");
